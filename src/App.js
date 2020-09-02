@@ -61,10 +61,9 @@ class App extends Component {
 
         </main>
 
-        <footer className = 'footer'>
-          <h4 className = 'copyright'>&copy; 2020 | Casey Pitman </h4>
+        <footer className = 'copyright'>
+          <h4 className = 'copyright-text'><span className = 'copyright-symbol'>&copy;</span> 2020 | Casey Pitman </h4>
         </footer>
-
       </div>
     );
   }
