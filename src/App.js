@@ -1,5 +1,5 @@
 import React,  {Component} from 'react';
-
+import styles from './styles.css'
 
 class App extends Component {
   constructor(props){
@@ -24,13 +24,34 @@ class App extends Component {
 
         <main className = 'container'>
           {/* Visible on load */}
-          <form className = 'input'>
-            <h3>How many options do you have?</h3>
-            <input className = 'optionsInput' type = 'number'/>
-            <button className = 'submitInput' type = 'submit'>Submit</button>
+          <form className = 'inputNumOptions'>
+            <h3 className = 'question'>How many options do you have?</h3>
+            <input className = 'numOfOptions' type = 'number'/>
+            <button className = 'submitNumInput' type = 'submit'>Submit Options</button>
           </form>
 
           {/* hidden on load, revealed after number of options */}
+
+          <form className = 'inputOptions'>
+            <h3 className= 'question'> Enter your options.</h3>
+            <div className = 'choices'>
+              <input className = 'choice1' type = 'text'/>
+              <input className = 'choice1' type = 'text'/>
+              <input className = 'choice1' type = 'text'/>
+            </div>
+            <button className = 'submitOptions' type = 'submit'>Make a decision.</button>
+          </form>
+
+          {/* hidden on load, revealed after number of options */}
+
+
+
+          <div className = 'decision'>
+            <h3 className = 'resultText'>You should choose</h3>
+            <h3 className = 'result'>This</h3>
+            <button className = 'reset'>Make another choice.</button>
+          </div>
+
 
         </main>
         <footer className = 'footer'>
