@@ -30,6 +30,7 @@ class App extends Component {
           <form className = 'input-num-options'>
             <h3 className = 'question'>How many options do you have?</h3>
             <input className = 'num-of-options' type = 'number'/>
+            <br/>
             <button className = 'submit-num-input' type = 'submit'>Submit Options</button>
           </form>
 
@@ -39,7 +40,9 @@ class App extends Component {
             <h3 className= 'question'> Enter your options.</h3>
             <div className = 'choices'>
               <input className = 'choice1' type = 'text'/>
+              <br/>
               <input className = 'choice1' type = 'text'/>
+              <br/>
               <input className = 'choice1' type = 'text'/>
             </div>
             <button className = 'submit-options' type = 'submit'>Make a decision.</button>
@@ -57,6 +60,7 @@ class App extends Component {
 
 
         </main>
+
         <footer className = 'footer'>
           <h4 className = 'copyright'>&copy; 2020 | Casey Pitman </h4>
         </footer>

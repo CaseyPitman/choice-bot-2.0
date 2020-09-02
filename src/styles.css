@@ -21,7 +21,18 @@ input    {
    border-radius: 0px;
    font-family: 'Roboto Mono', monospace;
    font-size:1.6rem;
+   margin: 0px auto 15px;
+   max-width:225px;
    padding:5px;
+   width:70%;
+}
+
+button {
+   background:rgb(0, 206, 209, 0.35);
+}
+
+button:hover {
+   background:rgb(0, 206, 209, 0.85)
 }
 
 
@@ -68,5 +79,42 @@ input    {
    max-width:40%;
 }
 
-/* CONTENT */
+/* CONTAINER */
 
+.container {
+   margin:30px auto;
+   width:80%;
+}
+
+
+.input-num-options, 
+.input-options, 
+.decision {
+   text-align:center;
+   width:100%;
+}
+
+.question, 
+.result-text {
+   font-size:2.2rem;
+   margin: 0px auto 20px;
+}
+
+.result {
+   font-size:3rem;
+   margin: 0px auto 20px;
+}
+
+
+.input-num-options {
+   display:none;
+}
+
+
+/* .input-options{
+   display:none;
+}  */
+
+/* .decision{
+  display:none;
+} */
