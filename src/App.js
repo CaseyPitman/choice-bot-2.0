@@ -4,7 +4,7 @@ import Header from './header';
 import InputNumber from './inputNumber';
 import InputOptions from './inputOptions';
 import Decision from './decision';
-import Fadeprops from 'fade-props'
+import FadeProps from 'fade-props'
 
 
 
@@ -17,11 +17,9 @@ class App extends Component {
       numOfOptions: 0,
       options: [],
       choice: '',
-      currentView: 0
+     
     }
   }
-
-  //state should contain the modules?
 
 
   // Update number
@@ -33,10 +31,10 @@ class App extends Component {
     console.log(this.state.numOfOptions)
   }
 
-  // 
-  //submit choices
-
-  //make decision
+  transition (from, to){
+    //tell UI to disappear one screen and reapppear the next
+    
+  }
 
 
   //alter visible screen
@@ -48,13 +46,15 @@ class App extends Component {
 
         <main className = 'container'>
           {/* Visible on load */}
-          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber}/>
+
+          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} transition = {this.transition}/>
 
           {/* hidden on load, revealed after number of options */}
           <InputOptions num = {this.state.numOfOptions} options = {this.state.options}/>
 
           {/* hidden on load, revealed after number of options */}
           <Decision/>
+
 
 
         </main>
