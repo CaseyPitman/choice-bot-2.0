@@ -1,21 +1,27 @@
 import React, {Component} from 'react';
 
 
-
-
-
 class InputNumber extends Component {
    constructor(props){
       super(props)
    }
 
+
+   handleChange = (event) =>{
+      let number = event.target.value;
+      this.props.updateNumber(number)
+   }
+
+   
+
    //click handler onSubmit calls submitNumber function
+
 
    render(){
       return (
          <form className = 'input-num-options'>
             <h3 className = 'question'>How many options do you have?</h3>
-            <input className = 'num-of-options' type = 'number'/>
+            <input className = 'num-of-options' type = 'number' value = {this.props.num} onChange = {this.handleChange}/>
             <br/>
             <button className = 'submit-num-input' type = 'submit'>Submit Options</button>
          </form>

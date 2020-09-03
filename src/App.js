@@ -3,7 +3,9 @@ import styles from './styles.css';
 import Header from './header';
 import InputNumber from './inputNumber';
 import InputOptions from './inputOptions';
-import Decision from './decision'
+import Decision from './decision';
+import Fadeprops from 'fade-props'
+
 
 
 
@@ -14,17 +16,30 @@ class App extends Component {
     this.state = {
       numOfOptions: 0,
       options: [],
-      choice: ''
+      choice: '',
+      currentView: 0
     }
   }
 
-  //submit numbers
+  //state should contain the modules?
 
+
+  // Update number
+  updateNumber = (number) => {
+    this.setState({numOfOptions: number})
+  }
+
+  componentDidUpdate(){
+    console.log(this.state.numOfOptions)
+  }
+
+  // 
   //submit choices
 
   //make decision
 
-  
+
+  //alter visible screen
 
   render(){
     return (
@@ -33,10 +48,10 @@ class App extends Component {
 
         <main className = 'container'>
           {/* Visible on load */}
-          <InputNumber/>
+          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber}/>
 
           {/* hidden on load, revealed after number of options */}
-          <InputOptions/>
+          <InputOptions num = {this.state.numOfOptions} options = {this.state.options}/>
 
           {/* hidden on load, revealed after number of options */}
           <Decision/>
