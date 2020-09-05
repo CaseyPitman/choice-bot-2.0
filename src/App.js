@@ -18,13 +18,6 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    // this.initialState = {
-    //   numOfOptions: '',
-    //   options: [],
-    //   choice: '',
-    //   currentView: 0
-    // }
-
     this.state = initialState;
   }
 
@@ -64,7 +57,8 @@ class App extends Component {
             num = {this.state.numOfOptions} 
             options = {this.state.options} 
             changeView = {this.changeView} 
-            currentView = {this.state.currentView}/>
+            currentView = {this.state.currentView}
+            numOfOptions = {this.state.numOfOptions}/>
 
           {/* hidden on load, revealed after number of options */}
           <Decision 

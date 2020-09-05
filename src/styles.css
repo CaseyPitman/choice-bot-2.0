@@ -82,6 +82,9 @@ button:hover {
    max-width:200px;
 }
 
+.App {
+   padding-bottom:200px;
+}
 
 /* CONTAINER */
 
@@ -108,22 +111,6 @@ button:hover {
    margin: 0px auto 20px;
 }
 
-/* Will be set by React */
-/* 
-.input-num-options {
-   display:none;
-}
-
-.input-options{
-   display:none;
-} 
- 
-.decision{
-   display:none;
-}  */
-
-/* Will be set by React */
-
 .show {
    display: block;
 }
@@ -131,8 +118,6 @@ button:hover {
 .hide {
    display: none;
 }
-
-
 
 .copyright {
    background:white;
@@ -161,7 +146,15 @@ button:hover {
    }
 
    .container {
-      margin: 150px auto 0;
+      margin: 100px auto 0;
       width: 50%;
    }
+
+   .input-num-options, 
+   .input-options, 
+   .decision {
+      margin:  50px auto;
+      width:75%;
+   }
+
 }
