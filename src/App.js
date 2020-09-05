@@ -15,7 +15,8 @@ class App extends Component {
       numOfOptions: 0,
       options: [],
       choice: '',
-      curView: 0
+      currentView: 0
+  
     }
   }
 
@@ -29,18 +30,10 @@ class App extends Component {
     console.log(this.state.numOfOptions)
   }
 
-  // transition (from, to){
-  //   //tell UI to disappear one screen and reapppear the next
-  //   if (from === 0){
-  //     console.log(domElements.inputNum);
-  //     //domElements.inputNum.style.display = 'none';
-  //   }
-  // }
 
   changeView = () => {
-    if (this.state.curView === 0 ){
-      return <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} transition = {this.transition}/>
-    }
+    
+    
   }
 
 
@@ -54,13 +47,13 @@ class App extends Component {
         <main className = 'container'>
           {/* Visible on load */}
           
-          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} transition = {this.transition}/>
+          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} currentView = {this.state.currentView}/>
 
           {/* hidden on load, revealed after number of options */}
-          {/* <InputOptions num = {this.state.numOfOptions} options = {this.state.options}/> */}
+          <InputOptions num = {this.state.numOfOptions} options = {this.state.options} currentView = {this.state.currentView}/>
 
           {/* hidden on load, revealed after number of options */}
-          {/* <Decision/> */}
+          <Decision currentView = {this.state.currentView}/>
 
           
 

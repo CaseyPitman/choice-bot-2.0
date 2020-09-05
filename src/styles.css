@@ -109,10 +109,10 @@ button:hover {
 }
 
 /* Will be set by React */
-
-/* .input-num-options {
+/* 
+.input-num-options {
    display:none;
-} */
+}
 
 .input-options{
    display:none;
@@ -120,9 +120,18 @@ button:hover {
  
 .decision{
    display:none;
-} 
+}  */
 
 /* Will be set by React */
+
+.show {
+   display: block;
+}
+
+.hide {
+   display: none;
+}
+
 
 
 .copyright {

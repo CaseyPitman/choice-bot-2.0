@@ -11,8 +11,18 @@ class InputOptions extends Component {
 
 
    render(){
+
+      let className = 'input-options';
+      console.log(this.props.visibility)
+      if (this.props.currentView === 1){
+         className += ' show';
+      } else {
+         className += ' hide'
+      }
+
+
       return (
-         <form className = 'input-options'>
+         <form className = {className}>
             <h3 className= 'question'> Enter your options.</h3>
             <div className = 'choices'>
                <input className = 'choice1' type = 'text'/>
