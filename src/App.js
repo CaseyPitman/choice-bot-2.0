@@ -4,9 +4,7 @@ import Header from './header';
 import InputNumber from './inputNumber';
 import InputOptions from './inputOptions';
 import Decision from './decision';
-import FadeProps from 'fade-props'
-
-
+import domElements from './domElements'
 
 
 class App extends Component {
@@ -17,7 +15,7 @@ class App extends Component {
       numOfOptions: 0,
       options: [],
       choice: '',
-     
+      curView: 0
     }
   }
 
@@ -31,9 +29,18 @@ class App extends Component {
     console.log(this.state.numOfOptions)
   }
 
-  transition (from, to){
-    //tell UI to disappear one screen and reapppear the next
-    
+  // transition (from, to){
+  //   //tell UI to disappear one screen and reapppear the next
+  //   if (from === 0){
+  //     console.log(domElements.inputNum);
+  //     //domElements.inputNum.style.display = 'none';
+  //   }
+  // }
+
+  changeView = () => {
+    if (this.state.curView === 0 ){
+      return <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} transition = {this.transition}/>
+    }
   }
 
 
@@ -46,14 +53,16 @@ class App extends Component {
 
         <main className = 'container'>
           {/* Visible on load */}
-
+          
           <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} transition = {this.transition}/>
 
           {/* hidden on load, revealed after number of options */}
-          <InputOptions num = {this.state.numOfOptions} options = {this.state.options}/>
+          {/* <InputOptions num = {this.state.numOfOptions} options = {this.state.options}/> */}
 
           {/* hidden on load, revealed after number of options */}
-          <Decision/>
+          {/* <Decision/> */}
+
+          
 
 
 

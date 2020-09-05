@@ -5,9 +5,7 @@ import React, {Component} from 'react';
 
 
 class InputOptions extends Component {
-   constructor(props){
-      super(props)
-   }
+  
 
    
 

@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 
 
 class InputNumber extends Component {
-   constructor(props){
-      super(props)
-   }
+
 
 
    handleChange = (event) =>{
