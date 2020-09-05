@@ -34,17 +34,12 @@ class App extends Component {
     this.setState({numOfOptions: number})
   }
 
-  componentDidUpdate(){
-    console.log(this.state.numOfOptions)
-  }
-
-
+  
   changeView = (newView) => {
     this.setState({
       currentView: newView
     })
   }
-
 
   reset = () =>{
     this.setState(initialState);
