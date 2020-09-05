@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
-import { render } from '@testing-library/react';
 
 
 class Decision extends Component {
+
+
+   handleClick = () => {
+      this.props.reset();
+   }
 
    render(){
       let className = 'decision';
@@ -16,7 +20,7 @@ class Decision extends Component {
          <div className = {className}>
             <h3 className = 'result-text'>You should choose</h3>
             <h3 className = 'result'>This</h3>
-            <button className = 'reset'>Make another choice.</button>
+            <button className = 'reset' onClick = {this.handleClick} >Make another choice.</button>
          </div>
       )
    }

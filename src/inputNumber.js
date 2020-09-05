@@ -12,12 +12,11 @@ class InputNumber extends Component {
    //click handler onSubmit calls submitNumber function
    handleSubmit = (event) => {
       event.preventDefault();
-      
+      this.props.changeView(1)
    }
 
    render(){
       let className = 'input-num-options';
-      console.log(this.props.visibility)
       if (this.props.currentView === 0){
          className += ' show';
       } else {
@@ -27,7 +26,11 @@ class InputNumber extends Component {
       return (
          <form className = {className} onSubmit = {this.handleSubmit}>
             <h3 className = 'question'>How many options do you have?</h3>
-            <input className = 'num-of-options' type = 'number' value = {this.props.num} onChange = {this.handleChange}/>
+            <input 
+               className = 'num-of-options' 
+               placeholder = 'Enter a number'
+               type = 'number' value = {this.props.num} 
+               onChange = {this.handleChange}/>
             <br/>
             <button className = 'submit-num-input' type = 'submit'>Submit Options</button>
          </form>

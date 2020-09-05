@@ -7,17 +7,25 @@ import Decision from './decision';
 import domElements from './domElements'
 
 
+const initialState = {
+  numOfOptions: '',
+  options: [],
+  choice: '',
+  currentView: 0
+}
+
 class App extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      numOfOptions: 0,
-      options: [],
-      choice: '',
-      currentView: 0
-  
-    }
+    // this.initialState = {
+    //   numOfOptions: '',
+    //   options: [],
+    //   choice: '',
+    //   currentView: 0
+    // }
+
+    this.state = initialState;
   }
 
 
@@ -31,13 +39,16 @@ class App extends Component {
   }
 
 
-  changeView = () => {
-    
-    
+  changeView = (newView) => {
+    this.setState({
+      currentView: newView
+    })
   }
 
 
-  //alter visible screen
+  reset = () =>{
+    this.setState(initialState);
+  }
 
   render(){
     return (
@@ -47,17 +58,24 @@ class App extends Component {
         <main className = 'container'>
           {/* Visible on load */}
           
-          <InputNumber num = {this.state.numOfOptions} updateNumber = {this.updateNumber} currentView = {this.state.currentView}/>
+          <InputNumber 
+            num = {this.state.numOfOptions} 
+            updateNumber = {this.updateNumber} 
+            changeView = {this.changeView} 
+            currentView = {this.state.currentView}/>
 
           {/* hidden on load, revealed after number of options */}
-          <InputOptions num = {this.state.numOfOptions} options = {this.state.options} currentView = {this.state.currentView}/>
+          <InputOptions 
+            num = {this.state.numOfOptions} 
+            options = {this.state.options} 
+            changeView = {this.changeView} 
+            currentView = {this.state.currentView}/>
 
           {/* hidden on load, revealed after number of options */}
-          <Decision currentView = {this.state.currentView}/>
-
-          
-
-
+          <Decision 
+            changeView = {this.changeView} 
+            currentView = {this.state.currentView}
+            reset = {this.reset}/>
 
         </main>
 
