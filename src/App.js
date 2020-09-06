@@ -9,7 +9,10 @@ import domElements from './domElements'
 
 const initialState = {
   numOfOptions: '',
-  options: [],
+  options: [{
+    key:9,
+    text:'nine'
+  }],
   choice: '',
   currentView: 0
 }
@@ -21,18 +24,46 @@ class App extends Component {
     this.state = initialState;
   }
 
-
   // Update number
   updateNumber = (number) => {
     this.setState({numOfOptions: number})
   }
 
-  
+  //Create choice state slots
+  createChoices = () => {
+    let number =  this.state.numOfOptions;
+    let createdOptions = [];
+    for (let i = 0; i < number; i++){
+      let newOption = {
+        key: i,
+        text: ''
+      }
+      createdOptions.push(newOption);
+    }
+    this.setState({options: [...createdOptions]});
+  }
+
+  // componentDidUpdate(){
+  //   console.log(this.state);
+  // }
+
   changeView = (newView) => {
     this.setState({
       currentView: newView
     })
   }
+
+
+  // Store options in state
+  // storeOption = (id) => {
+  //   let newOption = {key: id, option: ''};
+  //   let updatedOptions = this.state.options.slice();
+  //   updatedOptions.push(newOption);
+  //   this.setState({
+  //     options: updatedOptions
+  //   })
+  // }
+
 
   reset = () =>{
     this.setState(initialState);
@@ -50,7 +81,8 @@ class App extends Component {
             num = {this.state.numOfOptions} 
             updateNumber = {this.updateNumber} 
             changeView = {this.changeView} 
-            currentView = {this.state.currentView}/>
+            currentView = {this.state.currentView}
+            createChoices = {this.createChoices}/>
 
           {/* hidden on load, revealed after number of options */}
           <InputOptions 
@@ -58,9 +90,10 @@ class App extends Component {
             options = {this.state.options} 
             changeView = {this.changeView} 
             currentView = {this.state.currentView}
-            numOfOptions = {this.state.numOfOptions}/>
+            numOfOptions = {this.state.numOfOptions}
+            storeOption = {this.storeOption}/>
 
-          {/* hidden on load, revealed after number of options */}
+          {/* hidden on load, revealed after choice entered */}
           <Decision 
             changeView = {this.changeView} 
             currentView = {this.state.currentView}

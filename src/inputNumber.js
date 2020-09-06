@@ -9,9 +9,10 @@ class InputNumber extends Component {
       this.props.updateNumber(number)
    }
 
-   //click handler onSubmit calls submitNumber function
+  
    handleSubmit = (event) => {
       event.preventDefault();
+      this.props.createChoices();
       this.props.changeView(1)
    }
 
