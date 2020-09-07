@@ -50,27 +50,33 @@ class App extends Component {
     })
   }
   
-  // onType = (id, newText) => {
-  //   console.log('id', id);
-  //   console.log('text', newText)
-  //   let matchId = (option) => {
-  //     if (option.key !== id){
-  //       return option;
-  //     } else {
-  //       return {
-  //         ...option, 
-  //         text: newText
-  //       }
-  //     }
-  //   }
-  //   let updatedOptions = this.state.options.map(matchId);
-  //   this.setState({options: updatedOptions});
-  // }
-
-
-  componentDidUpdate(){
-    console.log(this.state);
+  onType = (id, newText) => {
+    let matchId = (option) => {
+      if (option.key !== id){
+        return option;
+      } else {
+        return {
+          ...option, 
+          text: newText
+        }
+      }
+    }
+    let updatedOptions = this.state.options.map(matchId);
+    this.setState({options: updatedOptions});
   }
+
+  makeDecision = () =>{
+    //Define range
+
+    //get Random number -1
+
+    //set decision in state
+  }
+
+
+  // componentDidUpdate(){
+  //   console.log(this.state);
+  // }
   
   
   reset = () =>{

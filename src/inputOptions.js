@@ -11,12 +11,7 @@ let InputOptions = (props) => {
       props.changeView(2)
    }
 
-   // handleChange = (event) => {
-   //    let id = this.props.options.key;
-   //    console.log('event', event.target.key);
-   //    let text = event.target.value;
-   //    this.props.onType(id, text);
-   // }
+
 
    let renderInput = (input) => <Choice key = {input.key} text = {input.text} input = {input} onType = {props.onType}/>
 

@@ -6,15 +6,14 @@ class Choice extends Component {
    //update state from here. 
 
    handleChange = (event) => {
-      // let id = this.props.option.key;
-      // console.log('event', event.target.key);
-      // let text = event.target.value;
-      // this.props.onType(id, text);
+      let id = this.props.input.key;
+      console.log(id);
+      let text = event.target.value;
+      this.props.onType(id, text);
    }
 
 
    render(){
-
       return (
          <input 
             className = 'choice'  
