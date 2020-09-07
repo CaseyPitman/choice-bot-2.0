@@ -50,22 +50,22 @@ class App extends Component {
     })
   }
   
-  onType = (id, newText) => {
-    console.log('id', id);
-    console.log('text', newText)
-    let matchId = (option) => {
-      if (option.key !== id){
-        return option;
-      } else {
-        return {
-          ...option, 
-          text: newText
-        }
-      }
-    }
-    let updatedOptions = this.state.options.map(matchId);
-    this.setState({options: updatedOptions});
-  }
+  // onType = (id, newText) => {
+  //   console.log('id', id);
+  //   console.log('text', newText)
+  //   let matchId = (option) => {
+  //     if (option.key !== id){
+  //       return option;
+  //     } else {
+  //       return {
+  //         ...option, 
+  //         text: newText
+  //       }
+  //     }
+  //   }
+  //   let updatedOptions = this.state.options.map(matchId);
+  //   this.setState({options: updatedOptions});
+  // }
 
 
   componentDidUpdate(){
@@ -101,7 +101,7 @@ class App extends Component {
             numOfOptions = {this.state.numOfOptions}
             storeOption = {this.storeOption}
             onType = {this.onType}
-            options = {this.state.options}/>
+            />
 
           {/* hidden on load, revealed after choice entered */}
           <Decision 
