@@ -4,14 +4,15 @@ import Header from './header';
 import InputNumber from './inputNumber';
 import InputOptions from './inputOptions';
 import Decision from './decision';
+import randomNum from './randomNum'
 
 
-
+//State upon start and/or reset
 const initialState = {
   numOfOptions: '',
   options: [{
-    key:9,
-    text:'nine'
+    key:11,
+    text:'none'
   }],
   choice: '',
   currentView: 0
@@ -45,6 +46,19 @@ class App extends Component {
 
   
   changeView = (newView) => {
+
+    //If moving to final screen (decision) then call for decision to be made.
+    if (newView === 2) {
+      let optionNum= randomNum(this.state.numOfOptions);
+      let decision = this.state.options.filter((option) => option.key === optionNum);
+
+      decision = decision[0].text;
+
+      this.setState({
+        choice: decision
+      })
+    }
+
     this.setState({
       currentView: newView
     })
@@ -65,21 +79,15 @@ class App extends Component {
     this.setState({options: updatedOptions});
   }
 
-  makeDecision = () =>{
-    //Define range
+ 
 
-    //get Random number -1
-
-    //set decision in state
+  componentDidUpdate(){
+    console.log(this.state);
   }
-
-
-  // componentDidUpdate(){
-  //   console.log(this.state);
-  // }
   
   
   reset = () =>{
+    console.log('reset');
     this.setState(initialState);
   }
 
@@ -113,6 +121,7 @@ class App extends Component {
           <Decision 
             changeView = {this.changeView} 
             currentView = {this.state.currentView}
+            choice = {this.state.choice}
             reset = {this.reset}/>
 
         </main>

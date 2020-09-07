@@ -7,7 +7,6 @@ class Choice extends Component {
 
    handleChange = (event) => {
       let id = this.props.input.key;
-      console.log(id);
       let text = event.target.value;
       this.props.onType(id, text);
    }
