@@ -4,7 +4,7 @@ import Header from './header';
 import InputNumber from './inputNumber';
 import InputOptions from './inputOptions';
 import Decision from './decision';
-import domElements from './domElements'
+
 
 
 const initialState = {
@@ -43,28 +43,36 @@ class App extends Component {
     this.setState({options: [...createdOptions]});
   }
 
-  // componentDidUpdate(){
-  //   console.log(this.state);
-  // }
-
+  
   changeView = (newView) => {
     this.setState({
       currentView: newView
     })
   }
+  
+  onType = (id, newText) => {
+    console.log('id', id);
+    console.log('text', newText)
+    let matchId = (option) => {
+      if (option.key !== id){
+        return option;
+      } else {
+        return {
+          ...option, 
+          text: newText
+        }
+      }
+    }
+    let updatedOptions = this.state.options.map(matchId);
+    this.setState({options: updatedOptions});
+  }
 
 
-  // Store options in state
-  // storeOption = (id) => {
-  //   let newOption = {key: id, option: ''};
-  //   let updatedOptions = this.state.options.slice();
-  //   updatedOptions.push(newOption);
-  //   this.setState({
-  //     options: updatedOptions
-  //   })
-  // }
-
-
+  componentDidUpdate(){
+    console.log(this.state);
+  }
+  
+  
   reset = () =>{
     this.setState(initialState);
   }
@@ -91,7 +99,9 @@ class App extends Component {
             changeView = {this.changeView} 
             currentView = {this.state.currentView}
             numOfOptions = {this.state.numOfOptions}
-            storeOption = {this.storeOption}/>
+            storeOption = {this.storeOption}
+            onType = {this.onType}
+            options = {this.state.options}/>
 
           {/* hidden on load, revealed after choice entered */}
           <Decision 

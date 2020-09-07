@@ -12,14 +12,17 @@ class InputOptions extends Component {
    }
 
    handleChange = (event) => {
-
+      let id = this.props.options.key;
+      console.log('event', event.target.key);
+      let text = event.target.value;
+      this.props.onType(id, text);
    }
 
 
    render(){
 
       
-      let renderInput = (id) => <input className = 'choice' key = {id} type = 'text' value = '' onChange = {this.handleChange}/>
+      let renderInput = (id) => <input className = 'choice' key = {id} type = 'text' value = {this.props.options.text} onChange = {this.handleChange}/>
       
       let number = this.props.numOfOptions;
       let inputs = [];
@@ -28,19 +31,6 @@ class InputOptions extends Component {
             let input = renderInput(i);
             inputs.push(input);
          }
-
-       //  console.log(inputs);
-
-        //add to state
-
-      //we should end up with a bunch of empty inputs in state. write and addInput function in app.js and add to state there, (store key! use object?) input: {key:blah, text''}
-      //call it in the loop below as it builds. 
-      //after that, you need to make sure each one has a onChange in the render above and update to state ,you'll need to pass id. 
-      //you can do this. 
-
-
-
-
 
       // Transition to next view
       let className = 'input-options';
