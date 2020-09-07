@@ -1,5 +1,7 @@
 import React from 'react'
 
+// This module returns the header
+
 const Header = () => {
    return (
       <header className='header'>

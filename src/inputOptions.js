@@ -1,50 +1,44 @@
 import React from 'react';
 import Choice from './choices'
 
-// This moudule will generate the specified number of choices as input fields an allow the user to input their available choices.
+// This moudule will generate the specified number of choices as input 
+//fields an allow the user to input their available choices.
 
 
 let InputOptions = (props) => {
-  
+   //Changes view after submission
    let handleSubmit = (event) => {
       event.preventDefault();
       props.changeView(2)
    }
 
-
-
-   let renderInput = (input) => <Choice key = {input.key} text = {input.text} input = {input} onType = {props.onType}/>
+   //Renders the stipulated number of input fields
+   let renderInput = (input) => 
+      <Choice 
+      key = {input.key} 
+      text = {input.text} 
+      input = {input} 
+      onType = {props.onType}/>
 
    let inputs = props.options.map(renderInput);
       
-      // let renderInput = (id) => <input className = 'choice' key = {id} type = 'text' value = {this.props.options.text} onChange = {this.handleChange}/>
-      
-      // let number = this.props.numOfOptions;
-      // let inputs = [];
+   // Transition to next view
+   let className = 'input-options';
+   if (props.currentView === 1){
+      className += ' show';
+   } else {
+      className += ' hide';
+   }
 
-      //    for (let i = 0; i < number; i++){
-      //       let input = renderInput(i);
-      //       inputs.push(input);
-      //    }
-
-      // Transition to next view
-      let className = 'input-options';
-      if (props.currentView === 1){
-         className += ' show';
-      } else {
-         className += ' hide';
-      }
-
-      return (
-         <form className = {className} onSubmit = {handleSubmit}>
-            <h3 className= 'question'> Enter your options.</h3>
-            <div className = 'choices'>
-              {inputs}
-            </div>
-            <button className = 'submit-options' type = 'submit'>Make a decision.</button>
-         </form>
-      )
-   
+   return (
+      <form className = {className} onSubmit = {handleSubmit}>
+         <h3 className= 'question'> Enter your options.</h3>
+         <div className = 'choices'>
+            {inputs}
+         </div>
+         <button className = 'submit-options' type = 'submit'>Make a decision.</button>
+      </form>
+   )
 }
 
 export default InputOptions;

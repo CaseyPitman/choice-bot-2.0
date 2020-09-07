@@ -21,7 +21,6 @@ const initialState = {
 class App extends Component {
   constructor(props){
     super(props);
-
     this.state = initialState;
   }
 
@@ -30,7 +29,7 @@ class App extends Component {
     this.setState({numOfOptions: number})
   }
 
-  //Create choice state slots
+  //Create choices and store and state - number based on user input
   createChoices = () => {
     let number =  this.state.numOfOptions;
     let createdOptions = [];
@@ -44,26 +43,30 @@ class App extends Component {
     this.setState({options: [...createdOptions]});
   }
 
-  
+  //Transition between views
   changeView = (newView) => {
 
-    //If moving to final screen (decision) then call for decision to be made.
+    //If moving to final screen (decision) then call for decision to be made
+    //and store in state. 
     if (newView === 2) {
+      //Get a random number
       let optionNum= randomNum(this.state.numOfOptions);
+      //Filter for choice associated with random number via key
       let decision = this.state.options.filter((option) => option.key === optionNum);
-
+      //Set decision as chosen choice text
       decision = decision[0].text;
 
       this.setState({
         choice: decision
       })
     }
-
+    //Set the current view in state
     this.setState({
       currentView: newView
     })
   }
   
+  //Set typed choices in state
   onType = (id, newText) => {
     let matchId = (option) => {
       if (option.key !== id){
@@ -79,15 +82,8 @@ class App extends Component {
     this.setState({options: updatedOptions});
   }
 
- 
-
-  componentDidUpdate(){
-    console.log(this.state);
-  }
-  
-  
+  //Reset app (view and state)
   reset = () =>{
-    console.log('reset');
     this.setState(initialState);
   }
 
@@ -97,8 +93,8 @@ class App extends Component {
         <Header/>
 
         <main className = 'container'>
+
           {/* Visible on load */}
-          
           <InputNumber 
             num = {this.state.numOfOptions} 
             updateNumber = {this.updateNumber} 
@@ -106,7 +102,7 @@ class App extends Component {
             currentView = {this.state.currentView}
             createChoices = {this.createChoices}/>
 
-          {/* hidden on load, revealed after number of options */}
+          {/* Hidden on load, revealed after number of options input */}
           <InputOptions 
             num = {this.state.numOfOptions} 
             options = {this.state.options} 
@@ -117,13 +113,12 @@ class App extends Component {
             onType = {this.onType}
             />
 
-          {/* hidden on load, revealed after choice entered */}
+          {/* Hidden on load, revealed after choices entered */}
           <Decision 
             changeView = {this.changeView} 
             currentView = {this.state.currentView}
             choice = {this.state.choice}
             reset = {this.reset}/>
-
         </main>
 
         <footer className = 'copyright'>

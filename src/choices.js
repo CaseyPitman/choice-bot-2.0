@@ -1,10 +1,10 @@
 import React,  {Component} from 'react';
 
+// This module renders a choice input field.
+
 class Choice extends Component {
 
-
-   //update state from here. 
-
+   //Updates choice text in state when typing
    handleChange = (event) => {
       let id = this.props.input.key;
       let text = event.target.value;

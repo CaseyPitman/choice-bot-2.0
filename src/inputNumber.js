@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 
+//This module allows the user to input the number of options they have 
+//when making their choice.
 
 class InputNumber extends Component {
 
-
+   //Saves input number in state
    handleChange = (event) =>{
       let number = event.target.value;
       this.props.updateNumber(number)
    }
 
-  
+   // Saves the choices and new view in state.
    handleSubmit = (event) => {
       event.preventDefault();
       this.props.createChoices();
@@ -17,6 +19,7 @@ class InputNumber extends Component {
    }
 
    render(){
+      //Hide or show based on state.currentView
       let className = 'input-num-options';
       if (this.props.currentView === 0){
          className += ' show';
