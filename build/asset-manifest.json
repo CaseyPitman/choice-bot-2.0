@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/choice-bot-2.0/static/css/main.07a5b863.chunk.css",
+    "main.js": "/choice-bot-2.0/static/js/main.a2c60b20.chunk.js",
+    "main.js.map": "/choice-bot-2.0/static/js/main.a2c60b20.chunk.js.map",
+    "runtime-main.js": "/choice-bot-2.0/static/js/runtime-main.c4d58312.js",
+    "runtime-main.js.map": "/choice-bot-2.0/static/js/runtime-main.c4d58312.js.map",
+    "static/js/2.2f524360.chunk.js": "/choice-bot-2.0/static/js/2.2f524360.chunk.js",
+    "static/js/2.2f524360.chunk.js.map": "/choice-bot-2.0/static/js/2.2f524360.chunk.js.map",
+    "index.html": "/choice-bot-2.0/index.html",
+    "precache-manifest.2d5d03875e40250054896b9fbb4a7eb2.js": "/choice-bot-2.0/precache-manifest.2d5d03875e40250054896b9fbb4a7eb2.js",
+    "service-worker.js": "/choice-bot-2.0/service-worker.js",
+    "static/css/main.07a5b863.chunk.css.map": "/choice-bot-2.0/static/css/main.07a5b863.chunk.css.map",
+    "static/js/2.2f524360.chunk.js.LICENSE.txt": "/choice-bot-2.0/static/js/2.2f524360.chunk.js.LICENSE.txt",
+    "static/media/choice-bot.jpg": "/choice-bot-2.0/static/media/choice-bot.b4d2505d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4d58312.js",
+    "static/js/2.2f524360.chunk.js",
+    "static/css/main.07a5b863.chunk.css",
+    "static/js/main.a2c60b20.chunk.js"
+  ]
+}
