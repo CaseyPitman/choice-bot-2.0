@@ -4,164 +4,162 @@
 /* GLOBAL */
 
 * {
-   box-sizing: border-box;
-   border: 0px;
-   margin: 0px;
+  box-sizing: border-box;
+  border: 0px;
+  margin: 0px;
 }
 
 html {
-   color:rgb(44, 44, 44);
-   font-family: 'Roboto Mono', monospace;
-   font-size:10px;
+  color: rgb(44, 44, 44);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
 }
-body{
-   height:100%;
-   width:100%;
+body {
+  height: 100%;
+  width: 100%;
 }
 
 button,
-input    {
-   border: 1px solid rgb(44, 44, 44);
-   border-radius: 0px;
-   font-family: 'Roboto Mono', monospace;
-   font-size:1.6rem;
-   margin: 0px auto 15px;
-   max-width:250px;
-   padding:5px;
-   text-align: center;
-   width:75%;
+input {
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: 0px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.6rem;
+  margin: 0px auto 15px;
+  max-width: 250px;
+  padding: 5px;
+  text-align: center;
+  width: 75%;
 }
 
 button {
-   background:rgb(0, 206, 209, 0.35);
+  background: rgb(0, 206, 209, 0.35);
 }
 
 button:hover {
-   background:rgb(0, 206, 209, 0.85)
+  background: rgb(0, 206, 209, 0.85);
 }
-
 
 /* HEADER STYLES */
 
 .header {
-   background-color: rgb(0, 206, 209, 0.85);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-flow: row wrap;
-   width: 100%;
+  background-color: rgb(0, 206, 209, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
 .headlines {
-   margin: 30px auto;
-   width:80%;
+  margin: 30px auto;
+  width: 80%;
 }
 
-.main-headline{
-   font-size:4.8rem;
-   font-weight:400;
+.main-headline {
+  font-size: 4.8rem;
+  font-weight: 400;
 }
 
 .version-text {
-   font-size:2.4rem;
-   font-weight: 300;
-   margin-bottom: 20px;
-   width:100%;
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .sub-headline {
-   font-size: 2.6rem;
-   font-weight:400;
+  font-size: 2.6rem;
+  font-weight: 400;
 }
 
 .robot-image {
-   border:1px solid rgb(44, 44, 44);
-   border-radius:50%;
-   display:block;
-   margin: 0px auto 15px;
-   max-width:200px;
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: 50%;
+  display: block;
+  margin: 0px auto 15px;
+  max-width: 200px;
 }
 
-
 .App {
-   padding-bottom:100px;
+  padding-bottom: 100px;
 }
 
 /* CONTAINER */
 
 .container {
-   margin:50px auto;
-   width:80%;
+  margin: 50px auto;
+  width: 80%;
 }
 
-.input-num-options, 
-.input-options, 
+.input-num-options,
+.input-options,
 .decision {
-   text-align:center;
-   width:100%;
+  text-align: center;
+  width: 100%;
 }
 
-.question, 
+.question,
 .result-text {
-   font-size:2.2rem;
-   margin: 0px auto 20px;
+  font-size: 2.2rem;
+  margin: 0px auto 20px;
 }
 
 .choices {
-   display:flex;
-   justify-content:center;
-   align-items:center;
-   flex-flow: column wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
 }
 
 .result {
-   font-size:3rem;
-   margin: 0px auto 20px;
+  font-size: 3rem;
+  margin: 0px auto 20px;
 }
 
 .show {
-   display: block;
+  display: block;
 }
 
 .hide {
-   display: none;
+  display: none;
 }
 
 .copyright {
-   background:white;
-   font-size: 16px;
-   position:fixed;
-   bottom:0px;
-   text-align: center;
-   width:100%;
+  background: white;
+  font-size: 16px;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
 }
-         
+
 .copyright-text {
-   background:rgb(44,44,44);
-   color:white;
-   padding: 5px
+  background: rgb(44, 44, 44);
+  color: white;
+  padding: 5px;
 }
 
 /* TABLET & DESKTOP STYLES */
 
-@media only screen and (min-width:768px){
-   .headlines {
-      width:50%;
-   }
+@media only screen and (min-width: 768px) {
+  .headlines {
+    width: 50%;
+  }
 
-   .robot-image {
-      margin: 30px auto;
-   }
+  .robot-image {
+    margin: 30px auto;
+  }
 
-   .container {
-      margin: 100px auto 0;
-      width: 50%;
-   }
+  .container {
+    margin: 100px auto 0;
+    width: 50%;
+  }
 
-   .input-num-options, 
-   .input-options, 
-   .decision {
-      margin:  50px auto;
-      width:75%;
-   }
+  .input-num-options,
+  .input-options,
+  .decision {
+    margin: 50px auto;
+    width: 75%;
+  }
 }
